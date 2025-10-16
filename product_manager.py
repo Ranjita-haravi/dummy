@@ -22,7 +22,7 @@ def add_product():
         conn.commit()
         print(f"Product '{name}' added successfully!")
     except sqlite3.IntegrityError:
-        print("Error: SKU already exists.")
+        print("Error: SKU already.")
     finally:
         conn.close()
 
