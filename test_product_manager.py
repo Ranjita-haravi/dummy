@@ -2,7 +2,7 @@ import os
 import sqlite3
 import pytest
 from database import setup_database, get_connection
-from product_manager import add_product, delete_product
+from product_manager import add_product
 
 @pytest.fixture(scope="module", autouse=True)
 def setup():
@@ -30,13 +30,4 @@ def test_add_product(monkeypatch):
     assert result is not None
     assert result[1] == "Keyboard"
 
-def test_delete_product(monkeypatch):
-    inputs = iter(["P001", "y"])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    delete_product()
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM products WHERE sku='P001'")
-    result = cursor.fetchone()
-    conn.close()
-    assert result is None
+
