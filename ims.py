@@ -1,5 +1,5 @@
 from database import setup_database
-from product_manager import add_product, view_products, edit_product, delete_product
+from product_manager import add_product
 
 def main_menu():
     while True:
@@ -13,15 +13,6 @@ def main_menu():
 
         if choice == '1':
             add_product()
-        elif choice == '2':
-            view_products()
-        elif choice == '3':
-            edit_product()
-        elif choice == '4':
-            delete_product()
-        elif choice == '5':
-            print("Exiting IMS. Goodbye!")
-            break
         else:
             print("Invalid choice. Please try again.")
 
