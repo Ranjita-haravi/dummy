@@ -13,7 +13,7 @@ def add_product():
     name = input("Enter product name: ")
     category = input("Enter category: ")
     price = float(input("Enter price: "))
-    stock = int(input("Enter stock quantity: "))
+    stock = int(input("Enter tock quantity: "))
 
     conn = get_connection()
     cursor = conn.cursor()
